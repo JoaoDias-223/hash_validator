@@ -43,9 +43,10 @@ def main():
         print(f"expected md5: \t\t{test_case['md5']}")
         print(f"actual md5: \t\t{md5_hash}")
 
+        print(f"SHA256: {sha256_valid}\nMD5:\t{md5_valid}")
         result = f"{BColors.OKGREEN}YES{BColors.ENDC}" if sha256_valid is True and md5_valid is True else f"{BColors.FAIL}NO{BColors.ENDC}"
         print(f"VALID? ", end="")
-        print(result)
+        print(f"\t{result}")
         print()
 
 
