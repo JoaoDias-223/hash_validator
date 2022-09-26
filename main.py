@@ -19,9 +19,7 @@ def read_file(filename: str, step: int = 3) -> list:
     with open(filename, mode='r', encoding='utf-8') as file:
         lines = file.readlines()
 
-        i = 0
-        temp_hash = {}
-        for idx in range(0, len(lines)-2, 3):
+        for idx in range(0, len(lines)-2, step):
             hashes.append(dict(phrase=lines[idx].strip('\n'),
                                sha256=lines[idx + 1].strip('\n'),
                                md5=lines[idx + 2].strip('\n')))
